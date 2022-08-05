@@ -5,7 +5,9 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                echo 'Hello World!'
+                sh 'docker run hello-world'
+                sh 'docker run -it ubuntu bash'
+                sh 'docker images hello-world'
             }
         }
     }
