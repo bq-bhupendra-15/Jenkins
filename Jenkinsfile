@@ -1,11 +1,11 @@
 pipeline {
     agent {
-        docker { image 'hello-world' }
+        docker { image 'node:16.13.1-alpine' }
     }
     stages {
         stage('Test') {
             steps {
-                echo 'Hello World!'
+                sh 'Hello Node'
             }
         }
     }
