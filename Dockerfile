@@ -1,3 +1,3 @@
-FROM hello-world
-WORKDIR /var/lib/jenkins/workspace/FirstPipe
-RUN docker run hello-world
+FROM scratch
+COPY hello /
+CMD ["/hello"]
