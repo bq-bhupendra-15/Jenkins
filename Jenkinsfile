@@ -5,8 +5,9 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh 'docker run hello-world'
-                sh 'docker images hello-world'
+                sh 'dockwer pull hello-world'
+                sh 'docker run -it --name hello-world hello-world'
+                sh 'docker start hello-world'
             }
         }
     }
