@@ -13,7 +13,7 @@ pipeline {
                 branch "fea*"
             }
             steps {
-                sh 'cat Jenkinsfile'
+                sh 'cat readme'
             }
         }
     }
