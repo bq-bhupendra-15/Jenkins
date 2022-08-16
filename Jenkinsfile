@@ -3,7 +3,9 @@ pipeline {
     stages {
         stage('hello') {
             steps {
-                echo 'Hello g'
+                sh 'docker rm $(docker ps --filter status=exited -q)'
+                sh 'docker run -itd --name hello-world hello-world /hello'
+                sh 'docker start hello-world'
             }
         }
         stage('escap') {
@@ -11,7 +13,7 @@ pipeline {
                 branch "fea*"
             }
             steps {
-                sh 'cat readme'
+                sh 'cat Jenkinsfile'
             }
         }
     }
