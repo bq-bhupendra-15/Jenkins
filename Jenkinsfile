@@ -8,5 +8,13 @@ pipeline {
                 sh 'docker start hello-world'
             }
         }
+        stage('escap') {
+            when {
+                branch 'fea*'
+            }
+            steps {
+                sh 'cat Jenkinsfile'
+            }
+        }
     }
 }
