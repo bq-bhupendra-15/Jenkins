@@ -10,7 +10,7 @@ pipeline {
         }
         stage('escap') {
             when {
-                branch 'fea*'
+                branch "fea*"
             }
             steps {
                 sh 'cat Jenkinsfile'
